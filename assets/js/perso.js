@@ -9,9 +9,54 @@ jeu8 = document.getElementById("jeu8");
 web1 = document.getElementById("web1");
 web2 = document.getElementById("web2");
 
+
+window.addEventListener('scroll', function() {
+  var scrollPrompt = document.getElementById('scroll-down');
+  var distanceFromTop = scrollPrompt.getBoundingClientRect().top;
+
+  if (distanceFromTop <= window.innerHeight * 0.8) {
+    scrollPrompt.classList.add('hidden');
+  }
+});
+
+
+const container = document.querySelector('.card-register');
+const footer = document.querySelector('footer');
+const windowHeight = window.innerHeight;
+function adjustContainerHeight() {
+  const footerHeight = footer.offsetHeight;
+  const containerHeight = container.offsetHeight;
+  const containerTop = container.offsetTop;
+  const spaceBelowContainer = windowHeight - containerTop - containerHeight;
+
+  // adjust the container height if there is not enough space
+
+  if (spaceBelowContainer < footerHeight) {
+    const newHeight = containerHeight + footerHeight - spaceBelowContainer;
+    container.style.height = newHeight + 'px';
+  }
+
+  // // adjust the card-img class to be proportional to the size of the container
+  // const cardImg = document.querySelector('.card-img');
+  // const cardImgHeight = cardImg.offsetHeight;
+  // const cardImgWidth = cardImg.offsetWidth;
+  // const cardImgTop = cardImg.offsetTop;
+  // const spaceBelowCardImg = windowHeight - cardImgTop - cardImgHeight;
+  // if (spaceBelowCardImg < 0) {
+  //   const newWidth = cardImgWidth - spaceBelowCardImg;
+  //   cardImg.style.width = newWidth + 'px';
+  // }
+
+}
+
+// Call adjustContainerHeight on window resize
+window.addEventListener('resize', adjustContainerHeight);
+// Call adjustContainerHeight initially
+adjustContainerHeight();
+
 // CHECKBOX BUTTON
 
-document.getElementById("checkRPG").onclick = function (e) {
+document.getElementById("checkRPG").onclick = function(e) {
   if (this.checked) {
     jeu8.style.display = "block";
   } else {
@@ -19,7 +64,7 @@ document.getElementById("checkRPG").onclick = function (e) {
   }
 };
 
-document.getElementById("checkPlateforme").onclick = function (e) {
+document.getElementById("checkPlateforme").onclick = function(e) {
   if (this.checked) {
     jeu2.style.display = "block";
   } else {
@@ -27,7 +72,7 @@ document.getElementById("checkPlateforme").onclick = function (e) {
   }
 };
 
-document.getElementById("checkVisualNovel").onclick = function (e) {
+document.getElementById("checkVisualNovel").onclick = function(e) {
   if (this.checked) {
     jeu1.style.display = "block";
   } else {
@@ -35,7 +80,7 @@ document.getElementById("checkVisualNovel").onclick = function (e) {
   }
 };
 
-document.getElementById("checkIdleGame").onclick = function (e) {
+document.getElementById("checkIdleGame").onclick = function(e) {
   if (this.checked) {
     jeu6.style.display = "block";
   } else {
@@ -43,7 +88,7 @@ document.getElementById("checkIdleGame").onclick = function (e) {
   }
 };
 
-document.getElementById("checkAction").onclick = function (e) {
+document.getElementById("checkAction").onclick = function(e) {
   if (this.checked) {
     jeu7.style.display = "block";
   } else {
@@ -51,7 +96,7 @@ document.getElementById("checkAction").onclick = function (e) {
   }
 };
 
-document.getElementById("checkPuzzle").onclick = function (e) {
+document.getElementById("checkPuzzle").onclick = function(e) {
   if (this.checked) {
     jeu2.style.display = "block";
     jeu3.style.display = "block";
@@ -113,7 +158,7 @@ function radioClick(maRadio) {
 
 // SECTIONS JEU WEB LOGICIEL
 
-document.getElementById("SectionJeu").onclick = function (e) {
+document.getElementById("SectionJeu").onclick = function(e) {
   jeu1.style.display = "block";
   jeu2.style.display = "block";
   jeu3.style.display = "block";
@@ -135,7 +180,7 @@ document.getElementById("SectionJeu").onclick = function (e) {
   document.getElementById("titlepresentation").innerHTML = "Jeux vidéo";
 };
 
-document.getElementById("SectionWeb").onclick = function (e) {
+document.getElementById("SectionWeb").onclick = function(e) {
   jeu1.style.display = "none";
   jeu2.style.display = "none";
   jeu3.style.display = "none";
@@ -157,7 +202,7 @@ document.getElementById("SectionWeb").onclick = function (e) {
   document.getElementById("titlepresentation").innerHTML = "Sites Web";
 };
 
-document.getElementById("SectionLogiciel").onclick = function (e) {
+document.getElementById("SectionLogiciel").onclick = function(e) {
   jeu1.style.display = "none";
   jeu2.style.display = "none";
   jeu3.style.display = "none";

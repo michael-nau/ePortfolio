@@ -17676,7 +17676,8 @@ hr.line-deafult {
 }
 
 .page-header .content-center {
-  position: absolute;
+  order: 0;
+  position:relative;
   top: 50%;
   left: 50%;
   z-index: 2;
@@ -17691,6 +17692,7 @@ hr.line-deafult {
 }
 
 .page-header .content-center.brand {
+  order: 0;
   width: 47%;
 }
 

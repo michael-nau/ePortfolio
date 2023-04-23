@@ -1,19 +1,3 @@
-<!--
-=========================================================
-* BLK Design System- v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- -->
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,10 +5,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:url" content="http://michael-nau.github.io/index.html">
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="My Eportfolio - Michael Naughton"/>
-  <meta property="og:description" content="I wanted to show off my achievements beyond what is just in my CV. Get to know me here!">
-  <meta property="og:image" content="https://emmacroq.github.io/assets/img/perso/apercuSite.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="My Eportfolio - Michael Naughton" />
+  <meta property="og:description"
+    content="I wanted to show off my achievements beyond what is just in my CV. Get to know me here!">
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <title>
@@ -42,6 +26,24 @@
 </head>
 
 <body class="index-page">
+  <div class="scroll-down">&#8595; Scroll Down</div>
+  <script>
+    var scrollDownBtn = document.querySelector(".scroll-down");
+    var pageHeight = window.innerHeight;
+
+    window.onscroll = function () {
+      var currentPosition = window.scrollY + pageHeight;
+      if (currentPosition >= document.body.offsetHeight) {
+        scrollDownBtn.classList.add('hidden')
+      } else {
+        scrollDownBtn.style.display = "block";
+      }
+    }
+
+    scrollDownBtn.onclick = function () {
+      window.scrollTo(0, pageHeight);
+    }
+  </script>
   <!-- Navbar -->
   <nav color-on-scroll="100" class="navbar navbar-expand-lg fixed-top navbar-transparent ">
     <div class="container">
@@ -49,7 +51,8 @@
         <a href="#ancre1" class="navbar-brand" rel="tooltip" data-placement="bottom" target="_self">
           <span>Portfolio •</span> Michael Naughton
         </a>
-        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
           <span class="navbar-toggler-bar bar2"></span>
           <span class="navbar-toggler-bar bar3"></span>
@@ -64,7 +67,8 @@
               </a>
             </div>
             <div class="col-6 collapse-close text-right">
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="tim-icons icon-simple-remove"></i>
               </button>
             </div>
@@ -72,21 +76,29 @@
         </div>
         <ul class="navbar-nav">
           <li class="nav-item p-0">
-            <a href="https://www.linkedin.com/in/michael-naughton77/" class="nav-link" rel="tooltip" title="Follow me on LinkedIn" data-placement="bottom" target="_blank">
+            <a href="https://www.linkedin.com/in/michael-naughton77/" class="nav-link" rel="tooltip"
+              title="Follow me on LinkedIn" data-placement="bottom" target="_blank">
               <i class="fab fa-linkedin"></i>
               <p class="d-lg-none d-xl-none">Linkedin</p>
             </a>
-            <li class="nav-item">
+          <li class="nav-item">
             <a href="https://github.com/michael-nau" class="nav-link" rel="tooltip" title="Check out my GitHub Profile"
               data-placement="bottom" target="_blank">
               <i class="fab fa-github"></i>
               <p class="d-lg-none d-xl-none">GitHub</p>
             </a>
-            <li/>
+            <li />
           </li>
           <li class="nav-item">
             <a href="profile.html" class="nav-link active">
               About me
+            </a>
+
+            <a href="leadership.html" class="nav-link active">
+              Leadership
+            </a>
+            <a href="teamwork.html" class="nav-link active">
+              Teamwork & Service 
             </a>
           </li>
         </ul>
@@ -103,322 +115,409 @@
       <div class="squares square5"></div>
       <div class="squares square6"></div>
       <div class="squares square7"></div>
-      <div class="container">
+      <div class="landing-container">
         <div class="content-center brand">
           <h1 class="h1-seo">MICHAEL NAUGHTON</h1>
-          <h3>Welcome to my ePortfolio!</h3>
+          <h3>ePortfolio</h3>
+        </div>
+        <div class="reveal-container">
+          <p class="statement">Personable, results-driven Software Engineering Student, with over two years of
+            experience in the software development industry.</p>
+          <p class="statement">Possesses a demonstrated ability to develop software end to end, from requirements
+            gathering to delivery.</p>
+          <p class="statement">Outstanding communicator able to work with diverse colleagues to produce value from
+            business requirements by producing maintainable and scalable software.</p>
+          <p class="statement">Passions include Audio Engineering, Machine Learning, Renewable Energy and Audio
+            Technology.</p>
+        </div>
+        <script>
+          // Show each statement one by one after a delay
+          const statements = document.querySelectorAll('.statement');
+          let delay = 1000; // 1 second delay
+          statements.forEach((statement) => {
+            setTimeout(() => {
+              statement.classList.add('show');
+            }, delay);
+            delay += 1000; // Increase delay by 1 second for each statement
+          });
+        </script>
+      </div>
+      <div class="footer"></div>
+
+    </div>
+  </div>
+  <div class="main">
+    <br>
+    <div class="col-md-10 ml-auto col-xl-6 mr-auto">
+      <!-- Nav tabs -->
+
+
+    </div>
+    <br>
+    <!-- fit below nav-item to width of page -->
+    <div class="container">
+      <div class="content-center brand">
+        <h1 class="h1-seo">Projects</h1>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="section section-basic row justify-content-around" id="basic-elements">
+      <img src="assets/img/path1.png" alt=" " class="path">
+      <div class="container col-8">
+        <h2 class="title" id="titlepresentation">Keywords</h2>
+        <div id="labels">
+          <span class="badge badge-info">Software Development</span>
+          <span class="badge badge-dark">Business Transformation</span>
+          <span class="badge badge-danger">Software Architecture</span>
+          <span class="badge badge-warning">Software Development Strategy</span>
+          <span class="badge badge-success">Data Engineering</span>
+        </div>
+        <br><br><br>
+        <div class="col-md-11 col-xl-12 mr-auto">
+          <!-- Nav tabs -->
+          <div class="card" id="jeu1">
+            <div class="card-header">
+              <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                <li class="nav-item col-4 d-none d-md-block">
+                  <div class="col-sm-9 col-7 mt-sm-0" role="tablist">
+                    <img src="assets/img/Salesforce-logo.png" alt="Raised image" class="img-fluid rounded shadow-lg">
+                  </div>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 align-self-center">
+                  <h3>Salesforce Development</h3>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 text-md-right">
+                  <span class="badge badge-info">Software<br />Development</span>
+                  <span class="badge badge-dark">Business<br />Transformation</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content tab-space">
+                <h3>Project Overview</h3>
+                <p>Developed API infastructure which was used to interface with Salesforce. This
+                  enabled the integration of Salesforce with other systems such as Xero and
+                  MongoDB. <br />
+                  <br />
+                  <br />The most notable use-case developed was a Cashflow Report (CFR) which delivers value to
+                  construction project managers by integrating data from two primary sources, namely Salesforce and
+                  Xero.
+                </p><br />
+                <h3>Key Achievements</h3>
+                <ul>
+                  <li>Developed API infastructure which was used to interface with Salesforce.</li>
+                  <li>Developed Cashflow Report (CFR) which delivered value to the business.</li>
+                  <li>Oversaw the maintenance and monitoring of a systems integration between Salesforce and Xero</li>
+                </ul>
+                <h4>Supporting Documentation</h4>
+                <a download="" href="supporting_docs/salesforce-api.pdf" class="nav-link active" target="_blank">API
+                  Documentation</a>
+                <a download="" href="supporting_docs/brr.pdf" class="nav-link active" target="_blank">Cashflow Report
+                  Spec</a>
+              </div>
+            </div>
+          </div>
+          <!-- Nav tabs -->
+          <div class="card" id="jeu2">
+            <div class="card-header">
+              <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                <li class="nav-item col-4 d-none d-md-block">
+                  <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
+                    <img src="assets/img/google-cloud.jpg" alt="Raised image" class="img-fluid rounded shadow-lg">
+                  </div>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 align-self-center">
+                  <h3>Finance Reconciliation</h3>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 text-md-right">
+                  <span class="badge badge-dark">Business Transformation</span>
+                  <span class="badge badge-warning">Software Development Strategy</span>
+                  <span class="badge badge-success">Data Engineering</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content tab-space">
+                <h3>Project Overview</h3>
+                <p> Owned the development and maintenance of a finance reconciliation service, which aggregated all
+                  charging sessions from the company's electric vehicle fleet and reconciled them with the
+                  company's financial system. <br />
+                  <br />
+                  <br /> The first iteration of this system was an end-to-end, scalable revenue reconciliation service,
+                  which was responsible for the creation of invoices in thier accounting software.
+                  <br /> <br />
+                  <br /> This system eventually was replaced by a data pipeline, which was built using a number of ETL's
+                  created using Domo, the companies Data Warehouse. The reason for this is that Xero was no longer able
+                  to handle the volume of invoices being created. The solution was to roll up the invoices into a single
+                  invoice per month, per charging station, which was then sent to Xero.
+                  <br />
+                  <br />
+                <h3>Key Achievements</h3>
+                <ul>
+                  <li>Created a scalable revenue reconciliation service, which was responsible for the creation of
+                    invoices in thier accounting software.</li>
+                  <li>Developed a data pipeline, which was built using a number of ETL's created using Domo, the
+                    companies Data Warehouse.</li>
+                  <li>Owned a system which rolled up the invoices into a single invoice per month, per charging station,
+                    which was then sent to Xero.</li>
+                </ul>
+                <h4>Supporting Documentation</h4>
+                <a download="" href="supporting_docs/invoice-creation-service.pdf" class="nav-link active"
+                  target="_blank">First Iteration</a>
+                <a download="" href="supporting_docs/domo-finance-service.pdf" class="nav-link active"
+                  target="_blank">Second Iteration</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Nav tabs -->
+          <div class="card" id="jeu3">
+            <div class="card-header">
+              <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                <li class="nav-item col-4 d-none d-md-block">
+                  <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
+                    <img src="assets/img/uts.png" alt="Raised image" class="img-fluid rounded shadow-lg">
+                  </div>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 align-self-center">
+                  <h3>Deep Learning and Convolutional Neural Networks Major Project </h3>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 text-md-right">
+                  <span class="badge badge-info">Software Development</span>
+                  <span class="badge badge-success">Data Engineering</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content tab-space">
+                <h3>Project Overview</h3>
+                <p>Spearheaded the project as the designated group leader of 2 other students, proactively engaged in
+                  coordinating,
+                  delegating, and compiling all group work. Utilising organisational and managerial skills to ensure
+                  project was delivered
+                  accordingly to the deadline.
+                  <p />
+                  <br />
+                  <br />
+                <h3>Key Achievements</h3>
+                <ul>
+                  <li> Singlehandedly developed and trained an accurate and reliable Object Detection model on a custom
+                    dataset with pyTorch
+                    for implementation in a Django webapp.</li>
+                  <li>Trained the model on a new and unusual dataset (PASCAL-Part Dataset) to detect unique parts of
+                    cars within any input
+                    image.</li>
+                  <li>Transformed a dataset which was initially encoded in .mat format (MATLAB) into a format usable by
+                    pyTorch (JPEG).</li>
+                </ul>
+                <h4>Supporting Documentation</h4>
+                <a href="https://github.com/AndrewDucDanhDo/deep-learning-and-convolutional-neural-network"
+                  class="nav-link active" target="_self">GitHub Repository</a>
+                <a href="https://www.youtube.com/watch?v=hSmt1k8JNIg" class="nav-link active" target="_self">Funtional
+                  Demo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Nav tabs -->
+          <div class="card" id="jeu4">
+            <div class="card-header">
+              <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                <li class="nav-item col-4 d-none d-md-block">
+                  <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
+                    <img src="assets/img/uts.png" alt='Raised image' class="img-fluid rounded shadow-lg">
+                  </div>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 align-self-center">
+                  <h3>Software Innovation Studio Major Project</h3>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 text-md-right">
+                  <span class="badge badge-info">Software Development</span>
+                  <span class="badge badge-danger">Software Architecture</span>
+                  <span class="badge badge-warning">Software Development Strategy</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content tab-space">
+                <h3>Project Overview</h3>
+                <p>As the group leader of three other students in the Software Innovation Studio Major Project at the
+                  University of
+                  Technology Sydney, I led the development of a webapp for human assisted AI music generation, using
+                  Tensorflow.js and JavaScript.
+                  <br />
+                  <br />
+                  I played a key role in decision-making throughout the project, from product conception to delivery,
+                  and acted as the project manager,
+                  developing functional requirements and sizing them for sprints in Jira. Additionally, I contributed
+                  significantly to
+                  the development of most of the required features, as evidenced by my numerous GitHub commits.
+                </p>
+                <br>
+                <br>
+                <h3>Key Achievements</h3>
+                <ul>
+                  <li>Awarded an individual mark of 93% for my contributions to the project.</li>
+                  <li>Developed a functional and user-friendly webapp for human assisted AI music generation.</li>
+                  <li>Played a key role in decision-making and project management throughout the development process.
+                  </li>
+                  <li>Contributed significantly to the development of most of the required features, as evidenced by my
+                    numerous
+                    GitHub commits.</li>
+                </ul>
+                <h4>Supporting Documentation</h4>
+                <a href="https://github.com/UTS-SIS-2022/piano-core" class="nav-link active" target="_self">GitHub
+                  Repository</a>
+                <a href="https://www.youtube.com/watch?v=aXymwi6TDMk&feature=youtu.be" class="nav-link active"
+                  target="_self">Demo Video</a>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="card" id="jeu5">
+            <div class="card-header">
+              <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                <li class="nav-item col-4 d-none d-md-block">
+                  <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
+                    <img src="assets/img/netsuite.png" alt='Raised image' class="img-fluid rounded shadow-lg">
+                  </div>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 align-self-center">
+                  <h3>Enterprise Resource Planning System Integration & Migration</h3>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 text-md-right">
+                  <span class="badge badge-dark">Business Transformation</span>
+                  <span class="badge badge-danger">Software Architecture</span>
+                  <span class="badge badge-warning">Software Development Strategy</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content tab-space">
+                <h3>Project Overview</h3>
+                <p>Appointed as the Internal Technical Lead to scope, deploy and integrate an instance of Oracle
+                  NetSuite into the business ecosystem, superseding the previous financial system, Xero. The systems we
+                  integrated with NetSuite were ApprovalMax, DOMO, Salesforce, Bank Feeds. I was also in charge of
+                  migrating any internal tooling that was dependent on Xero; including Node.js services and reporting
+                  pipelines.<br><br>
+
+                  Completed data modelling, which was a pivotal point of discussion for the wider business systems data
+                  model, ensuring a unified data model was adhered to in the Quote to Cash process, as well as Inventory
+                  Management. Worked with external consultants which provided various services to aid in the
+                  implementation and integration of NetSuite.<br><br>
+
+                  Applied concepts and skills learned at university, such as Data Modelling, Systems Architecture,
+                  Systems Testing and Quality Management; but also applied new knowledge learned on the job, such as
+                  Oracle Systems, Systems Integration, Stakeholder Management and Business Intelligence.<br><br></p>
+
+                <h3>Key Achievements</h3>
+                <ul>
+                  <li>Successfully scoped, deployed, and integrated an instance of Oracle NetSuite into the business
+                    ecosystem, replacing the previous financial system, Xero.</li>
+                  <li>Completed data modelling for the Quote to Cash process and Inventory Management, ensuring a
+                    unified data model was adhered to, with the help of external consultants.</li>
+                  <li>Applied both theoretical concepts learned at university, as well as new knowledge gained on the
+                    job, such as Oracle Systems, Systems Integration, Stakeholder Management and Business Intelligence.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Nav tabs -->
+
+          <!-- Sites Webs -->
+
+          <!-- Nav tabs -->
+          <div class="card" id="web1">
+            <div class="card-header">
+              <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                <li class="nav-item col-4 d-none d-md-block">
+                  <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
+                    <img src="assets/img/perso/Sitejap.png" alt="Raised image" class="img-fluid rounded shadow-lg">
+                  </div>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 align-self-center">
+                  <h3>Site cours de Japonais</h3>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content tab-space">
+                <p>Projet personnel qui me tient énormément à cœur, repose sur des cours de Japonais.
+                  <br />
+                  <br />Je souhaite sur ce site transmettre mes connaissances en japonais de manière amusante et
+                  simple.
+                  Le plus important et le plus dur est donc l’écriture. L’un de mes projets le plus long et le plus
+                  complet.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Nav tabs -->
+          <div class="card" id="web2">
+            <div class="card-header">
+              <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                <li class="nav-item col-4 d-none d-md-block">
+                  <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
+                    <img src="assets/img/perso/eportefolio.PNG" alt="Raised image" class="img-fluid rounded shadow-lg">
+                  </div>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 align-self-center">
+                  <h3>Portefolio</h3>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content tab-space">
+                <p>C’est le site actuel. Permet de présenter et de rassembler tous mes projets dans un même endroit
+                  accessible de n’importe où.
+                  <br />
+                  <br />Première fois que j’utilise entièrement du Bootstrap pour réaliser un site et j’ai repris le
+                  design de Creative Tim pour le réaliser, que je remercie au passage tant le design est magnifique.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Nav tabs -->
+          <div class="card" id="web3">
+            <div class="card-header">
+              <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+                <li class="nav-item col-4 d-none d-md-block">
+                  <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
+                    <img src="assets/img/perso/odm.PNG" alt="Raised image" class="img-fluid rounded shadow-lg">
+                  </div>
+                </li>
+                <li class="nav-item col-xs-6 col-md-4 align-self-center">
+                  <h3>Ordre de Mission</h3>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content tab-space">
+                <p>Projet de deuxième année de DUT Informatique. Site web administratif pour l’IUT. Première
+                  expérience
+                  méthode agile et travail en équipe avec 6 personnes.
+                  <br />
+                  <br />Créer un ordre de mission n’est pas disponible pour les élèves de l’IUT du campus III, ce qui
+                  est dangereux pour les missions tel que le salon de l’étudiant, car on n’aurait pas de preuve pour
+                  l’assurance. Ce site vient combler ce problème.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-    <div class="main">
-      <br>
-      <div class="col-md-10 ml-auto col-xl-6 mr-auto">
-        <!-- Nav tabs -->
-        <div class="card">
-          <div class="card-header">
-            <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-              <li class="nav-item">
-                <a href="profile.html" class="nav-link active">
-                  <i class="tim-icons icon-spaceship" ></i> View my Professional Profile
-                </a>
-                <div class="card-body">
-                  
-                  <!-- Tab panes -->
-                  <div class="tab-content tab-space">
-                    
-                    <div class="tab-pane active">
-                      
-                      <p class="text-justify">Do not hesitate to contact me if you have any questions or if you want to know more about
-                        me. <br />
-                        <br />
-                        <br />Here, you will learn more about my Software Development journey!
-                      </p>
-                    </div>
-                  </div>
-                </div>
-               
-              </li>
-            </ul>
-          </div>
-         
-        </div>
-        <br>
-        <!-- fit below nav-item to width of page -->
-              <div class="container">
-                <div class="content-center brand">
-                  <h1 class="h1-seo">Projects</h1>
-                </div>
-              </div>
-      </div>
-      <div>
-        <div class="section section-basic row justify-content-around" id="basic-elements">
-          <img src="assets/img/path1.png" alt=" " class="path">
-          <div class="container col-8">
-            <h2 class="title" id="titlepresentation">Keywords</h2>
-            <div id="labels">
-              <span class="badge badge-info">Software Development</span>
-              <span class="badge badge-dark">Business Transformation</span>
-              <span class="badge badge-danger">Software Architecture</span>
-              <span class="badge badge-warning">Software Development Strategy</span>
-              <span class="badge badge-success">Data Engineering</span>
-          </div>
-            <br><br><br>
-          <div class="col-md-11 col-xl-12 mr-auto">
-            <!-- Nav tabs -->
-            <div class="card" id="jeu1">
-              <div class="card-header">
-                <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                  <li class="nav-item col-4 d-none d-md-block">
-                    <div class="col-sm-9 col-7 mt-sm-0" role="tablist">
-                      <img src="assets/img/Salesforce-logo.png" alt="Raised image" class="img-fluid rounded shadow-lg">
-                    </div>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 align-self-center">
-                    <h3>Salesforce Development</h3>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 text-md-right">
-                    <span class="badge badge-info">Software<br/>Development</span>
-                    <span class="badge badge-dark">Business<br/>Transformation</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <!-- Tab panes -->
-                <div class="tab-content tab-space">
-                  <h3>Project Overview</h3>
-                    <p>Developed API infastructure which was used to interface with Salesforce. This
-                      enabled the integration of Salesforce with other systems such as Xero and
-                      MongoDB. <br/>
-                      <br/>
-                      <br/>The most notable use-case developed was a Cashflow Report (CFR) which delivers value to
-                      construction project managers by integrating data from two primary sources, namely Salesforce and Xero.</p><br/>
-                    <h3>Key Achievements</h3>
-                    <ul>
-                      <li>Developed API infastructure which was used to interface with Salesforce.</li>
-                      <li>Developed Cashflow Report (CFR) which delivered value to the business.</li>
-                      <li>Oversaw the maintenance and monitoring of a systems integration between Salesforce and Xero</li>
-                    </ul>
-                      <h4>Supporting Documentation</h4>
-                        <a download="" href="supporting_docs/salesforce-api.pdf" class="nav-link active" target="_blank">API Documentation</a>
-                        <a download="" href="supporting_docs/brr.pdf" class="nav-link active" target="_blank">Cashflow Report Spec</a>
-                </div>
-              </div>
-            </div>
-            <!-- Nav tabs -->
-            <div class="card" id="jeu2">
-              <div class="card-header">
-                <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                  <li class="nav-item col-4 d-none d-md-block">
-                    <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
-                      <img src="assets/img/google-cloud.jpg" alt="Raised image" class="img-fluid rounded shadow-lg">
-                    </div>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 align-self-center">
-                    <h3>Finance Reconciliation</h3>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 text-md-right">
-                    <span class="badge badge-dark">Business Transformation</span>
-                    <span class="badge badge-warning">Software Development Strategy</span>
-                    <span class="badge badge-success">Data Engineering</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <!-- Tab panes -->
-                <div class="tab-content tab-space">
-                  <h3>Project Overview</h3>
-                  <p> Owned the development and maintenance of a finance reconciliation service, which aggregated all
-                    charging sessions from the company's electric vehicle fleet and reconciled them with the
-                    company's financial system. <br/>
-                    <br/>
-                    <br/> The first iteration of this system was an end-to-end, scalable revenue reconciliation service, 
-                    which was responsible for the creation of invoices in thier accounting software. 
-                    <br/> <br/>
-                    <br/> This system eventually was replaced by a data pipeline, which was built using a number of ETL's 
-                    created using Domo, the companies Data Warehouse. The reason for this is that Xero was no longer able 
-                    to handle the volume of invoices being created. The solution was to roll up the invoices into a single
-                    invoice per month, per charging station, which was then sent to Xero. 
-                    <br/>
-                    <br/>
-                    <h3>Key Achievements</h3>
-                    <ul>
-                      <li>Created a scalable revenue reconciliation service, which was responsible for the creation of invoices in thier accounting software.</li>
-                      <li>Developed a data pipeline, which was built using a number of ETL's created using Domo, the companies Data Warehouse.</li>
-                      <li>Owned a system which rolled up the invoices into a single invoice per month, per charging station, which was then sent to Xero.</li>
-                    </ul>
-                    <h4>Supporting Documentation</h4>
-                    <a download="" href="supporting_docs/invoice-creation-service.pdf" class="nav-link active" target="_blank">First Iteration</a>
-                    <a download="" href="supporting_docs/domo-finance-service.pdf" class="nav-link active" target="_blank">Second Iteration</a>
-                </p>
-              </div>
-              </div>
-            </div>
-            <!-- Nav tabs -->
-            <div class="card" id="jeu3">
-                <div class="card-header">
-                <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                  <li class="nav-item col-4 d-none d-md-block">
-                    <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
-                      <img src="assets/img/uts.png" alt="Raised image" class="img-fluid rounded shadow-lg">
-                    </div>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 align-self-center">
-                    <h3>Deep Learning and Convolutional Neural Networks Major Project </h3>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 text-md-right">
-                    <span class="badge badge-info">Software Development</span>
-                    <span class="badge badge-success">Data Engineering</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <!-- Tab panes -->
-                <div class="tab-content tab-space">
-                    <h3>Project Overview</h3>
-                    <p>Spearheaded the project as the designated group leader of 2 other students, proactively engaged in coordinating,
-                    delegating, and compiling all group work. Utilising organisational and managerial skills to ensure project was delivered
-                    accordingly to the deadline.<p/>
-                    <br/>
-                    <br/>
-                    <h3>Key Achievements</h3>
-                    <ul>
-                      <li> Singlehandedly developed and trained an accurate and reliable Object Detection model on a custom dataset with pyTorch
-                      for implementation in a Django webapp.</li>
-                      <li>Trained the model on a new and unusual dataset (PASCAL-Part Dataset) to detect unique parts of cars within any input
-                      image.</li>
-                      <li>Transformed a dataset which was initially encoded in .mat format (MATLAB) into a format usable by pyTorch (JPEG).</li>
-                    </ul>
-                    <h4>Supporting Documentation</h4>
-                    <a href="https://github.com/AndrewDucDanhDo/deep-learning-and-convolutional-neural-network" class="nav-link active" target="_self">GitHub Repository</a>
-                    <a href="https://www.youtube.com/watch?v=hSmt1k8JNIg" class="nav-link active" target="_self" >Funtional Demo</a>
-              </div>
-              </div>
-            </div>
-            <!-- Nav tabs -->
-            <div class="card" id="jeu4">
-              <div class="card-header">
-                <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                  <li class="nav-item col-4 d-none d-md-block">
-                    <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
-                      <img src="assets/img/uts.png" alt='Raised image' class="img-fluid rounded shadow-lg">
-                    </div>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 align-self-center">
-                    <h3>Software Innovation Studio Major Project</h3>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 text-md-right">
-                    <span class="badge badge-info">Software Development</span>
-                    <span class="badge badge-danger">Software Architecture</span>
-                    <span class="badge badge-warning">Software Development Strategy</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <!-- Tab panes -->
-                <div class="tab-content tab-space">
-                  <h3>Project Overview</h3>
-                  <p>As the group leader of three other students in the Software Innovation Studio Major Project at the University of
-                    Technology Sydney, I led the development of a webapp for human assisted AI music generation, using Tensorflow.js and JavaScript. 
-                    <br/>
-                    <br />
-                    I played a key role in decision-making throughout the project, from product conception to delivery, and acted as the project manager,
-                    developing functional requirements and sizing them for sprints in Jira. Additionally, I contributed significantly to
-                    the development of most of the required features, as evidenced by my numerous GitHub commits.</p>
-                  <br>
-                  <br>
-                  <h3>Key Achievements</h3>
-                  <ul>
-                    <li>Awarded an individual mark of 93% for my contributions to the project.</li>
-                    <li>Developed a functional and user-friendly webapp for human assisted AI music generation.</li>
-                    <li>Played a key role in decision-making and project management throughout the development process.</li>
-                    <li>Contributed significantly to the development of most of the required features, as evidenced by my numerous
-                      GitHub commits.</li>
-                  </ul>
-                  <h4>Supporting Documentation</h4>
-                  <a href="https://github.com/UTS-SIS-2022/piano-core" class="nav-link active" target="_self">GitHub Repository</a>
-                  <a href="https://www.youtube.com/watch?v=aXymwi6TDMk&feature=youtu.be" class="nav-link active" target="_self">Demo Video</a>
-                </div>
-
-              </div>
-            </div>
-            <!-- Nav tabs -->
-        
-            <!-- Sites Webs -->
-
-            <!-- Nav tabs -->
-            <div class="card" id="web1">
-              <div class="card-header">
-                <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                  <li class="nav-item col-4 d-none d-md-block">
-                    <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
-                      <img src="assets/img/perso/Sitejap.png" alt="Raised image" class="img-fluid rounded shadow-lg">
-                    </div>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 align-self-center">
-                    <h3>Site cours de Japonais</h3>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <!-- Tab panes -->
-                <div class="tab-content tab-space">
-                  <p>Projet personnel qui me tient énormément à cœur, repose sur des cours de Japonais.
-                    <br />
-                    <br/>Je souhaite sur ce site transmettre mes connaissances en japonais de manière amusante et simple. Le plus important et le plus dur est donc l’écriture. L’un de mes projets le plus long et le plus complet.</p>
-              </div>
-              </div>
-            </div>
-            <!-- Nav tabs -->
-            <div class="card" id="web2">
-              <div class="card-header">
-                <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                  <li class="nav-item col-4 d-none d-md-block">
-                    <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
-                      <img src="assets/img/perso/eportefolio.PNG" alt="Raised image" class="img-fluid rounded shadow-lg">
-                    </div>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 align-self-center">
-                    <h3>Portefolio</h3>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <!-- Tab panes -->
-                <div class="tab-content tab-space">
-                  <p>C’est le site actuel. Permet de présenter et de rassembler tous mes projets dans un même endroit accessible de n’importe où.
-                    <br />
-                    <br/>Première fois que j’utilise entièrement du Bootstrap pour réaliser un site et j’ai repris le design de Creative Tim pour le réaliser, que je remercie au passage tant le design est magnifique.</p>
-              </div>
-              </div>
-            </div>
-            <!-- Nav tabs -->
-            <div class="card" id="web3">
-              <div class="card-header">
-                <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
-                  <li class="nav-item col-4 d-none d-md-block">
-                    <div class="col-sm-9 col-7 mt-5 mt-sm-0" role="tablist">
-                      <img src="assets/img/perso/odm.PNG" alt="Raised image" class="img-fluid rounded shadow-lg">
-                    </div>
-                  </li>
-                  <li class="nav-item col-xs-6 col-md-4 align-self-center">
-                    <h3>Ordre de Mission</h3>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <!-- Tab panes -->
-                <div class="tab-content tab-space">
-                  <p>Projet de deuxième année de DUT Informatique. Site web administratif pour l’IUT. Première expérience méthode agile et travail en équipe avec 6 personnes.
-                    <br />
-                    <br/>Créer un ordre de mission n’est pas disponible pour les élèves de l’IUT du campus III, ce qui est dangereux pour les missions tel que le salon de l’étudiant, car on n’aurait pas de preuve pour l’assurance. Ce site vient combler ce problème.</p>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>  
-        </div>
-      </div>
 
   <footer class="footer">
     <div class="container">
@@ -429,7 +528,9 @@
         <div class="col-md-4 text-sm-right">
           <h3 class="title2">Follow Me</h3>
           <div class="btn-wrapper profile">
-            <a href="https://www.linkedin.com/in/michael-naughton77/" target="_blank" class="btn btn-icon btn-neutral  btn-round btn-simple" data-toggle="tooltip" data-original-title="Suivez-moi aussi ici !">
+            <a href="https://www.linkedin.com/in/michael-naughton77/" target="_blank"
+              class="btn btn-icon btn-neutral  btn-round btn-simple" data-toggle="tooltip"
+              data-original-title="Suivez-moi aussi ici !">
               <i class="fab fa-linkedin"></i>
             </a>
             <a href="https://www.github.com/michael-nau/" target="_blank"
@@ -438,15 +539,15 @@
               <i class="fab fa-github"></i>
             </a>
           </div>
-          
+
         </div>
       </div>
     </div>
   </footer>
-    
+
   </div>
   <!--   Core JS Files   -->
-  <script src="./assets/js/core/jquery.min.js" ></script>
+  <script src="./assets/js/core/jquery.min.js"></script>
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap.min.js"></script>
   <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -464,7 +565,7 @@
   <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
   <script src="./assets/js/blk-design-system.min.js?v=1.0.0"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       blackKit.initDatePicker();
       blackKit.initSliders();
     });

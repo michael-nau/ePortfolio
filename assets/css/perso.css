@@ -6,3 +6,65 @@
     display: none;
 }
 
+
+
+.scroll-down.hidden {
+  opacity: 0;
+}
+
+  .scroll-down {
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        font-size: 40px;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+html, body {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer {
+  height: 50px;
+}
+
+		.statement {
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+  margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16pt;
+    font-family: Arial, Helvetica, sans-serif;
+		}
+		
+		/* Show the statements one by one */
+		.statement.show {
+			opacity: 1;
+		}
+		
+		/* Style the container */
+		.reveal-container {
+      order: 1;
+      width: 100%;
+			text-align: center;
+			font-family: Arial, sans-serif;
+      z-index: inherit;
+		}
+
+.wrapper {
+        width: 100%;
+      }
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
